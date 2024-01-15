@@ -1,0 +1,14 @@
+.pytest_cache
+__pycache__
+.coverage*
+.mutmut-cache
+.venv
+.idea
+*.iml
+.DS_Store
+*.ckpt
+stable-diffusion-v1-5/
+*.egg-info
+build
+.hypothesis
+images/test.jpg
