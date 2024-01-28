@@ -97,7 +97,8 @@ async def coro(frames, writer, tracker, tmpdir, stream_id):
     items = ""
 
     for frame in frames:
-        frame.labels = json.loads(frame.labels)["Results"]
+
+        frame.labels = (json.loads(frame.labels) if not isinstance(frame.labels, tuple) else frame.labels)["Results"]
 
     if all(frame.labels for frame in frames):
         mot_response = [tracker.update(frame) for frame in frames]
