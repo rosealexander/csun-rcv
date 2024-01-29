@@ -28,11 +28,11 @@ packaging==23.2
 pillow==10.2.0
 pyparsing==3.1.1
 python-dateutil==2.8.2
-rcvprocessor @ git+https://github.com/rosealexander/rcvprocessor@992f3c75137d51de69cdd39c97116ed37fc09279
+rcvprocessor @ git+https://github.com/rosealexander/rcvprocessor
 scikit-image==0.22.0
 scipy==1.11.4
 six==1.16.0
-sort @ git+https://github.com/rosealexander/sort.git@294c4968ca85060779a4151005e897fcded6a31d
+sort @ git+https://github.com/rosealexander/sort.git
 tifffile==2023.12.9
 urllib3==2.0.7
 wrapt==1.16.0
