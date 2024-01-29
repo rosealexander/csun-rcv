@@ -97,7 +97,7 @@ async def coro(frames, writer, tracker, tmpdir, stream_id):
     items = ""
 
     for frame in frames:
-        logger.info(f"frame: {frame}")
+        logger.debug(f"frame: {frame}")
         frame.labels = json.loads(frame.labels)["Results"]
 
     if all(frame.labels for frame in frames):
