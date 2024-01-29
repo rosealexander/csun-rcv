@@ -98,8 +98,6 @@ async def coro(frames, writer, tracker, tmpdir, stream_id):
 
     for frame in frames:
 
-        logger.info(frame, frame.labels)
-
         frame.labels = json.loads(frame.labels)["Results"]
 
     if all(frame.labels for frame in frames):
