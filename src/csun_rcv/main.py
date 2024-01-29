@@ -98,7 +98,11 @@ async def coro(frames, writer, tracker, tmpdir, stream_id):
 
     for frame in frames:
         logger.debug(f"frame: {frame}")
-        frame.labels = json.loads(frame.labels)["Results"]
+
+        try:
+            frame.labels = json.loads(frame.labels)["Results"]
+        except TypeError:
+            pass
 
     if all(frame.labels for frame in frames):
         mot_response = [tracker.update(frame) for frame in frames]
