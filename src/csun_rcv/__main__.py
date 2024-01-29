@@ -2,7 +2,7 @@ import argparse
 import sys
 import traceback
 
-from rcv_integration import run as run_rcv_integration
+from main import run
 
 
 class _ArgParser:
@@ -33,9 +33,7 @@ class _ArgParser:
 
 
 def _entry():
-    # opts = {k: v for k, v in _ArgParser().args()}
-    # run_kvs_sagemaker_integration(opts.get('stream'), opts.get('endpoint'))
-    run_rcv_integration()
+    run()
 
 
 if __name__ == '__main__':

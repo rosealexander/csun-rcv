@@ -15,8 +15,8 @@ import numpy as np
 from logger import Logger
 from mot import Tracker
 from rcvprocessor import Processor, FrameContainer
-from src.kvs_sagemaker_integration.boto import DynamoDBClient, put_item, S3Client, put_object, SSMClient, put_parameter
-from src.kvs_sagemaker_integration.hls import Writer
+from src.csun_rcv.boto import DynamoDBClient, put_item, S3Client, put_object, SSMClient, put_parameter
+from src.csun_rcv.hls import Writer
 
 logger = Logger(__name__).get()
 
@@ -100,7 +100,7 @@ async def coro(frames, writer, tracker, tmpdir, stream_id):
 
         logger.info(frame, frame.labels)
 
-        frame.labels = (json.loads(frame.labels)["Results"] if not isinstance(frame.labels, tuple) else frame.labels)
+        frame.labels = json.loads(frame.labels)["Results"]
 
     if all(frame.labels for frame in frames):
         mot_response = [tracker.update(frame) for frame in frames]
